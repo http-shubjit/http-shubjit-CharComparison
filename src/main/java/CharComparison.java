@@ -10,7 +10,23 @@ public class CharComparison {
      * @param b an array of char.
      * @return -1 if A is less than B, 1 if A is greater than B, and 0 if the two arrays are identical.
      */
-    public int compare(char[] a, char[] b){
+    public int compare(char[] a, char[] b) {
+
+        int A = 0;
+        int B = 0;
+
+        int length = a.length > b.length ? b.length : a.length;
+        for (int i = 0; i < length; i++) {
+            A += Character.getNumericValue(a[i]);
+            B += Character.getNumericValue(b[i]);
+        }
+
+        if (A < B)
+        return -1;
+        else if(A>B)
+        return 1;
+        else
         return 0;
+
     }
 }
